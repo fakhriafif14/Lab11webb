@@ -1,16 +1,21 @@
-# PHP Framework (Codeigniter4)
-| Praktikum 4-6  |  Pemrograman Web 2  
-|-------|---------
-| NIM   | 312310632
-| Nama  | fakhri afif
-| Kelas | TI.23.A6
-| Dosen |  Agung Nugroho, S.Kom., M.Kom.
+# 📘 PHP Framework (CodeIgniter 4) – Praktikum 4–6
 
+**Mata Kuliah:** Pemrograman Web 2
 
-## Praktikum 4
-### Langkah-langkah Praktikum
-- Membuat Table User
-```
+| Field     | Data                          |
+| --------- | ----------------------------- |
+| **NIM**   | 312310632                     |
+| **Nama**  | Fakhri Afif                   |
+| **Kelas** | TI.23.A6                      |
+| **Dosen** | Agung Nugroho, S.Kom., M.Kom. |
+
+---
+
+## ✅ Praktikum 4 – Database Seeder & Auth Filter
+
+### 🔹 Membuat Tabel `user`
+
+```sql
 CREATE TABLE user (
  id INT(11) auto_increment,
  username VARCHAR(200) NOT NULL,
@@ -19,57 +24,38 @@ CREATE TABLE user (
  PRIMARY KEY(id)
 );
 ```
-- Membuat Model User
-![image](ss/ssmodel.png)
-Oke, aku buatin yang lebih **rapi**, **terstruktur**, dan cocok banget buat ditaruh di `README.md` GitHub! Ini aku kasih yang clean, konsisten, dan nyaman dibaca:
 
----
+### 🔹 Membuat Model `User`
 
-# 📚 Praktikum: Database Seeder, Auth Filter, dan Pagination
+![User Model](ss/ssmodel.png)
 
-## 📌 1. Membuat Database Seeder
+### 🔹 Seeder untuk Data Dummy Login
 
-Seeder digunakan untuk mengisi database dengan data dummy, misalnya untuk keperluan pengujian login.
-
-### Langkah-langkah:
-
-1. **Buka CLI** dan jalankan perintah berikut:
-
+1. **Jalankan CLI**:
    ![User Seeder CLI](ss/userseeder.png)
 
-2. **Buka file** `app/Database/Seeds/UserSeeder.php` dan isi dengan kode berikut:
-
+2. **Edit file** `app/Database/Seeds/UserSeeder.php`:
    ![User Seeder Code](ss/seeds.png)
 
-3. **Kembali ke CLI** dan jalankan perintah berikut untuk menjalankan seeder:
-
+3. **Jalankan Seeder**:
    ![Save Seeds](ss/saveseeds.png)
 
 ---
 
-## 📌 2. Uji Coba Login
+### 🔹 Uji Coba Login
 
-Setelah database terisi, lakukan pengujian login.
-
-- Buka URL: [http://localhost:8080/user/login](http://localhost:8080/user/login)
-
-Tampilan login:
-
-![Login Page](ss/login.png)
+* Akses: [http://localhost:8080/user/login](http://localhost:8080/user/login)
+* Tampilan:
+  ![Login Page](ss/login.png)
 
 ---
 
-## 📌 3. Menambahkan Auth Filter
+### 🔹 Menambahkan Auth Filter
 
-Untuk melindungi halaman admin, kita perlu membuat filter autentikasi.
-
-### Langkah-langkah:
-
-1. **Buat file** `Auth.php` di direktori `app/Filters/`.
-
+1. Buat file `Auth.php` di `app/Filters/`
    ![Auth Filter](ss/auth.png)
 
-2. **Daftarkan filter** baru di `app/Config/Filters.php`:
+2. Daftarkan filter di `app/Config/Filters.php`:
 
    ```php
    'auth' => App\Filters\Auth::class,
@@ -77,42 +63,55 @@ Untuk melindungi halaman admin, kita perlu membuat filter autentikasi.
 
    ![Filters Config](ss/filters.png)
 
-3. **Atur routes** untuk halaman yang ingin dilindungi, di `app/Config/Routes.php`:
-
+3. Atur route yang ingin dilindungi di `app/Config/Routes.php`
    ![Routes Setup](ss/routes.png)
 
 ---
 
-## 📌 4. Percobaan Akses Menu Admin
+### 🔹 Pengujian Akses Admin (Tanpa Login)
 
-- Cobalah akses URL: [http://localhost:8080/admin/artikel](http://localhost:8080/admin/artikel)
-
-Jika belum login, pengguna akan otomatis diarahkan ke halaman login.
-
-Tampilan:
-
-![Admin Artikel](ss/adminartikel.png)
+* Akses: [http://localhost:8080/admin/artikel](http://localhost:8080/admin/artikel)
+* Redirect ke login jika belum autentikasi:
+  ![Admin Artikel](ss/adminartikel.png)
 
 ---
 
-## 📌 5. Praktikum 5: Membuat Pagination
+## ✅ Praktikum 5 – Pagination & Pencarian Artikel
 
-Pagination berguna untuk membatasi tampilan data dalam jumlah besar menjadi beberapa halaman kecil.
+### 🔹 Menambahkan Pagination
 
-### Langkah-langkah:
-
-1. **Modifikasi method** `admin_index` di `App/Controller/Artikel`:
-
+1. Modifikasi `admin_index()` di `App/Controller/Artikel`
    ![Controller Pagination](ss/ssp5_2.png)
 
-2. **Tambahkan form pencarian** di `App/Views/artikel/admin_index.php`, sebelum tabel:
-
+2. Tambahkan form pencarian di `Views/artikel/admin_index.php`
    ![Form Search](ss/ssp5_3.png)
 
-3. **Ubah tampilan link pagination** di bawah tabel:
-
+3. Tampilkan link pagination di bawah tabel
    ![Pagination Links](ss/ssp5_4.png)
 
 ---
 
+## ✅ Praktikum 6 – Unggah Gambar pada Tambah Artikel
+
+### 🔹 Modifikasi Controller
+
+* Ubah method `add()` di `Artikel.php` agar mendukung upload gambar:
+  ![Upload Controller](ss/ssuploadcontroller.png)
+
+### 🔹 Tambah Elemen Input di Form Tambah Artikel
+
+* File: `views/artikel/form_add.php`
+  ![Upload Form](ss/ssuploadform.png)
+
+### 🔹 Pengujian Fitur Upload
+
+* Uji coba tambah artikel + upload gambar melalui form:
+  ![Upload Result](ss/ssuploadresult.png)
+
+---
+
+Selesai. Terima kasih 🙌
+Jika ada kesalahan atau pembaruan, silakan lakukan pull request atau issue.
+
+---
 
