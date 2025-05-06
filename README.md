@@ -27,17 +27,20 @@ CREATE TABLE user (
 
 ### 🔹 Membuat Model `User`
 
-![User Model](ss/ssmodel.png)
+![User Model](ss/model.png)
 
 ### 🔹 Seeder untuk Data Dummy Login
 
 1. **Jalankan CLI**:
-   ![User Seeder CLI](ss/userseeder.png)
+   
+   ![User Seeder CLI](ss/seeder.png)
 
-2. **Edit file** `app/Database/Seeds/UserSeeder.php`:
-   ![User Seeder Code](ss/seeds.png)
+3. **Edit file** `app/Database/Seeds/UserSeeder.php`:
+   
+   ![User Seeder Code](ss/user.png)
 
-3. **Jalankan Seeder**:
+4. **Jalankan Seeder**:
+   
    ![Save Seeds](ss/saveseeds.png)
 
 ---
@@ -61,7 +64,7 @@ CREATE TABLE user (
    'auth' => App\Filters\Auth::class,
    ```
 
-   ![Filters Config](ss/filters.png)
+   ![Filters Config](ss/filter.png)
 
 3. Atur route yang ingin dilindungi di `app/Config/Routes.php`
    ![Routes Setup](ss/routes.png)
@@ -72,7 +75,7 @@ CREATE TABLE user (
 
 * Akses: [http://localhost:8080/admin/artikel](http://localhost:8080/admin/artikel)
 * Redirect ke login jika belum autentikasi:
-  ![Admin Artikel](ss/adminartikel.png)
+  ![Admin Artikel](ss/login.png)
 
 ---
 
@@ -87,7 +90,7 @@ CREATE TABLE user (
    ![Form Search](ss/ssp5_3.png)
 
 3. Tampilkan link pagination di bawah tabel
-   ![Pagination Links](ss/ssp5_4.png)
+   ![Pagination Links](ss/artikels.png)
 
 ---
 
