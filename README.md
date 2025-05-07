@@ -75,7 +75,7 @@ CREATE TABLE user (
 
 * Akses: [http://localhost:8080/admin/artikel](http://localhost:8080/admin/artikel)
 * Redirect ke login jika belum autentikasi:
-  ![Admin Artikel](ss/login.png)
+  ![Admin Artikel](ss/sigin.png)
 
 ---
 
@@ -84,13 +84,17 @@ CREATE TABLE user (
 ### 🔹 Menambahkan Pagination
 
 1. Modifikasi `admin_index()` di `App/Controller/Artikel`
-   ![Controller Pagination](ss/ssp5_2.png)
+   ![Controller Pagination](ss/index.png)
 
 2. Tambahkan form pencarian di `Views/artikel/admin_index.php`
-   ![Form Search](ss/ssp5_3.png)
+   ![Form Search](ss/search.png)
 
 3. Tampilkan link pagination di bawah tabel
-   ![Pagination Links](ss/artikels.png)
+   
+   ![Pagination Links](ss/pagination.png)
+
+4.Hasilnya
+  ![Hasil](ss/view.png)
 
 ---
 
@@ -99,22 +103,23 @@ CREATE TABLE user (
 ### 🔹 Modifikasi Controller
 
 * Ubah method `add()` di `Artikel.php` agar mendukung upload gambar:
-  ![Upload Controller](ss/ssuploadcontroller.png)
+  ![Upload Controller](ss/controller.png)
 
 ### 🔹 Tambah Elemen Input di Form Tambah Artikel
-
 * File: `views/artikel/form_add.php`
-  ![Upload Form](ss/ssuploadform.png)
+  
+  ![Upload Form](ss/form.png)
+
 
 ### 🔹 Pengujian Fitur Upload
 
 * Uji coba tambah artikel + upload gambar melalui form:
-  ![Upload Result](ss/ssuploadresult.png)
+  ![Upload Result](ss/upload.png)
 
 ---
 
 Selesai. Terima kasih 🙌
-Jika ada kesalahan atau pembaruan, silakan lakukan pull request atau issue.
+
 
 ---
 
